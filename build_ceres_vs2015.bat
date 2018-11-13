@@ -46,8 +46,8 @@ move eigen\Eigen ..\
 call :SafeRMDIR "eigen-temp"
 popd
 call "%VSVAR%"
-msbuild ceres-%VSNUM%.sln /p:Configuration=Debug /p:Platform=x64 /p:PlatformToolset=v140
-msbuild ceres-%VSNUM%.sln /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v140
+msbuild ceres-%VSNUM%.sln /p:Configuration=Debug /p:Platform=x64 /p:PlatformToolset=v140 /p:WindowsTargetPlatformVersion=8.1
+msbuild ceres-%VSNUM%.sln /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v140 /p:WindowsTargetPlatformVersion=8.1
 
 set HOME=ceres-windows
 xcopy /Y "ceres-solver\include\*.*" ..\%HOME%\3rdparty\include\ /e /h /k 2>&1 >NUL
